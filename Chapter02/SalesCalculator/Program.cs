@@ -18,9 +18,9 @@ namespace SalesCalculator {
         //売り上げデータを読み込み、Saleオブジェクトのリストを返す
         static List<Sale> ReadSales(string filePath) {
             List<Sale> sales = new List<Sale>();
-            string[] lines = File.ReadAllLines(filePath);
-            foreach (string line in lines) {
-                string[] items = line.Split(',');
+            string[] Lines = File.ReadAllLines(filePath);
+            foreach (string Line in Lines) {
+                string[] items = Line.Split(',');
                 Sale sale = new Sale {
                     ShopName = items[0],
                     productCategory = items[1],
