@@ -6,13 +6,17 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace SalesCalculator {
-     class  Program{
+    class  Program{
         static void Main(String[] args) {
-            ReadSales("sales.csv");
+            SelesCounter sales = new SelesCounter(ReadSales("sales.csv"));
+            Dictionary<string, int> amountPerStore = sales.GetPerStoreSales();
+            foreach (KeyValuePair<string, int> obj in amountPerStore) {
+                Console.WriteLine("{0}{1}", obj.Key, obj.Value);
+            }
         }
 
         //売り上げデータを読み込み、Saleオブジェクトのリストを返す
-        static List<Sale> ReadSales(String filePath) {
+        static List<Sale> ReadSales(string filePath) {
             List<Sale> sales = new List<Sale>();
             string[] lines = File.ReadAllLines(filePath);
             foreach (string line in lines) {
@@ -24,9 +28,6 @@ namespace SalesCalculator {
                 };
                 sales.Add(sale);
             }
-
-
-
             return sales;
         }
     }
