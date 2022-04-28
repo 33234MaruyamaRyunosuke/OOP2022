@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,8 +11,8 @@ namespace SalesCalculator {
         private List<Sale> _sales; //csvファイルから読み込んだデータ
 
         //コンストラクタ
-        public SelesCounter(List<Sale> sales) {
-            _sales = sales;
+        public SelesCounter(string filePath) {
+            _sales = ReadSales(filePath);
         }
 
         //店舗別売り上げを求める
@@ -24,6 +25,22 @@ namespace SalesCalculator {
                     dict[sale.ShopName] = sale.Amount;
             }
             return dict;
+        }
+
+        //売り上げデータを読み込み、Saleオブジェクトのリストを返す
+        static List<Sale> ReadSales(string filePath) {
+            List<Sale> sales = new List<Sale>();
+            string[] Lines = File.ReadAllLines(filePath);
+            foreach (string Line in Lines) {
+                string[] items = Line.Split(',');
+                Sale sale = new Sale {
+                    ShopName = items[0],
+                    productCategory = items[1],
+                    Amount = int.Parse(items[2])
+                };
+                sales.Add(sale);
+            }
+            return sales;
         }
     }
 }
