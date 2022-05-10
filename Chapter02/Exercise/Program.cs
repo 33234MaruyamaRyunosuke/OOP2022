@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace Exercise {
     class Program {
-        
 
+        //2.1.3
         static void Main(string[] args) {
 
             var songs = new Song[] {
@@ -20,9 +20,11 @@ namespace Exercise {
             PrintSongs(songs);
         }
 
-        private static void PrintSongs(Song[] songs) {
-            foreach(var song in songs) {
-
+        //2.1.4
+        private static void PrintSongs(IEnumerable<Song> songs) {
+            foreach (var song in songs) {
+                Console.WriteLine("{0}, {1}, {2:m\\:ss}",
+                    song.Title, song.ArtistName, TimeSpan.FromSeconds(song.Length));
             }
         }
     }
