@@ -6,7 +6,15 @@ using System.Threading.Tasks;
 
 namespace Exercise {
     class Program {
+        
+
         static void Main(string[] args) {
+
+            //PrintSongs(Songs);
+        }
+
+        private static void PrintSongs(Song[] songs) {
+
         }
     }
 }

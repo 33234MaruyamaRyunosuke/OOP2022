@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Exercise {
-    class song {
+    class Song {
 
         //プロパティ
         
@@ -16,8 +16,10 @@ namespace Exercise {
         public int Length { get; set; } //演奏時間(秒)
 
         //因数付きコンストラクタ
-        public song() {
-
+        public Song(string title, string artistName, int length) {
+            Title = title;
+            ArtistName = artistName;
+            Length = length;
         }
     }
 }
