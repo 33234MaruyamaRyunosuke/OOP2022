@@ -12,7 +12,7 @@ namespace Exercise2 {
                 //インチからメートルへの対応表を出力
                 PrintInchToMeterList(1, 10);
             }
-            else {
+            else if (args.Length >= 1 && args[0] == "-toi") {
                 //メートルからインチへの対応表を出力
                 PrintMeterToInchList(1, 10);
             }
@@ -23,7 +23,7 @@ namespace Exercise2 {
         private static void PrintInchToMeterList(int start, int stop) {
             for (int Inch = 1; Inch <= stop; Inch++) {
                 double meter = InchConverter.ToMeter(Inch);
-                Console.WriteLine("{0} ih = {1:0.0000} m", Inch, meter);
+                Console.WriteLine("{0} inch = {1:0.0000} m", Inch, meter);
             }
         }
 
@@ -31,7 +31,7 @@ namespace Exercise2 {
         private static void PrintMeterToInchList(int start, int stop) {
             for (int meter = 1; meter <= 10; meter++) {
                 double Inch = InchConverter.FromMeter(meter);
-                Console.WriteLine("{0} m = {1:0.0000} ih", meter, Inch);
+                Console.WriteLine("{0} m = {1:0.0000} inch", meter, Inch);
             }
         }
     }
