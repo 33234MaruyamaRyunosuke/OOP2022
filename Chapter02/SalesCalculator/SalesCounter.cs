@@ -5,19 +5,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Exercise3 {
-    public class SelesCounter {
+namespace SalesCalculator {
+    public class SalesCounter {
         private IEnumerable<Sale> _sales; //csvファイルから読み込んだデータ
 
         //コンストラクタ
-        public SelesCounter(string filePath) {
+        public SalesCounter(string filePath) {
             _sales = ReadSales(filePath);
         }
 
         //店舗別売り上げを求める
         public IDictionary<String, int> GetPerStoreSales() {
             var dict = new Dictionary<string, int>();
-            foreach (Sale sale in _sales) {
+            foreach (var sale in _sales) {
                 if (dict.ContainsKey(sale.ShopName))
                     dict[sale.ShopName] += sale.Amount;
                 else
