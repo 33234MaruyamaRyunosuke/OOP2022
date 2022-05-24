@@ -27,11 +27,11 @@ namespace Exercise01 {
         // 4.1.3
         public YearMonth AddOneMonth() {
 
-            if (Month == 12){
+            if (Month == 12) {
                 return new YearMonth(this.Year + 1, 1);
             }
             else {
-                return new YearMonth(this.Year,this.Month + 1);
+                return new YearMonth(this.Year, this.Month + 1);
             }
         }
 
