@@ -8,6 +8,10 @@ namespace Exercise02 {
     class Program {
         static void Main(string[] args) {
 
+            int num;
+            Console.ReadLine();
+
+            //int.TryParse();
         }
     }
 }
