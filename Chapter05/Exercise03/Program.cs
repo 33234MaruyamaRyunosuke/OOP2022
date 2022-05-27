@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Exercise03 {
-    class Program {
+     class Program {
         static void Main(string[] args) {
             var text = "Jackdaws love my big sphinx of quartz";
 
@@ -26,15 +26,18 @@ namespace Exercise03 {
         }
 
         private static void Exercise3_1(string text) {
-            
+            int spaces = text.Count(c => c == ' ');
+            Console.WriteLine("空白数:{0}", spaces);
         }
 
         private static void Exercise3_2(string text) {
-            
+            var replaced = text.Replace("big", "small");
+            Console.WriteLine(replaced);
         }
 
         private static void Exercise3_3(string text) {
-            
+            int count = text.Split(' ').Length;
+            Console.WriteLine("空白数:{0}",count);
         }
 
         private static void Exercise3_4(string text) {
