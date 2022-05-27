@@ -50,7 +50,7 @@ namespace Exercise03 {
         }
 
         private static void Exercise3_5(string text) {
-            
+            //foreach
         }
     }
 }
