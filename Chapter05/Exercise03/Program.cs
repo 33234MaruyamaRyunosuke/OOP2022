@@ -50,7 +50,19 @@ namespace Exercise03 {
         }
 
         private static void Exercise3_5(string text) {
-            //foreach
+            var array = text.Split(' ');
+           if(array.Length > 0) {
+
+                var sb = new StringBuilder(array[0]);
+                foreach(var word in array.Skip(1)) {
+                    
+                    sb.Append(' ');
+                    sb.Append(word);
+                }
+
+                var str = sb.ToString();
+                Console.WriteLine(str);
+           }
         }
-    }
+     }
 }
