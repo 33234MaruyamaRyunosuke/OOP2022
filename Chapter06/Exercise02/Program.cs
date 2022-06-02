@@ -37,6 +37,10 @@ namespace Exercise02 {
             Console.WriteLine("-----");
 
             Exercise2_7(books);
+
+            Console.WriteLine("-----");
+
+            Exercise2_8(books);
         }
 
         private static void Exercise2_1(List<Book> books) {
@@ -69,10 +73,20 @@ namespace Exercise02 {
         }
 
         private static void Exercise2_6(List<Book> books) {
-            
+            var book = books.Where(b => b.Pages >= 400).OrderByDescending(b => b.Price);
+            foreach (var b in book) {
+                Console.WriteLine("{0} {1}", b.Title, b.Price);
+            }
         }
 
         private static void Exercise2_7(List<Book> books) {
+            var book = books.Where(b => b.Title.Contains("C#")).Where(b => b.Pages <= 500);
+            foreach (var b in book) {
+                Console.WriteLine("{0}", b.Title);
+            }
+        }
+        
+        private static void Exercise2_8(List<Book> books) {
             
         }
 
