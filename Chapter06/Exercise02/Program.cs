@@ -40,6 +40,10 @@ namespace Exercise02 {
         }
 
         private static void Exercise2_1(List<Book> books) {
+            var book = books.Where(b => b.Title == "ワンダフル・C#ライフ");
+            foreach(var b in book) {
+                Console.WriteLine("{0} {1}", b.Price, b.Pages);
+            }
             
         }
 
