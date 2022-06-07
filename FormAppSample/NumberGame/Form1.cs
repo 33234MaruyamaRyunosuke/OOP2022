@@ -8,18 +8,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Sample0607 {
+namespace NumberGame {
     public partial class Form1 : Form {
 
-        Random rand = new Random();
+        private Random rand = new Random();
+
+        private int randomNumber;
 
         public Form1() {
             InitializeComponent();
         }
 
-        private void btRandom_Click(object sender, EventArgs e) {
+        private void button1_Click(object sender, EventArgs e) {
 
-            Number.Value = rand.Next(minValue: (int)Minnum.Value, maxValue: (int)Maxnum.Value + 1);
         }
     }
 }
