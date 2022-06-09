@@ -19,8 +19,26 @@ namespace NumberGame {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e) {
-
+        private void Form1_Load(object sender,EventArgs e) {
+            getRandom();
         }
+
+        
+
+        private void Judge_Click(object sender, EventArgs e) {
+            /*if(randomNumber == Number.Value) {
+                ToolStripStatusLabel
+            }*/
+        }
+
+        private void MaxNum_ValueChanged(object sender, EventArgs e) {
+            getRandom();
+        }
+
+        private void getRandom() {
+            randomNumber = rand.Next(1, (int) MaxNum.Value);
+            this.Text = randomNumber.ToString();
+        }
+        
     }
 }
