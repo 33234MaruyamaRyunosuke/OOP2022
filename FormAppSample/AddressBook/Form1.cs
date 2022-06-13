@@ -31,7 +31,7 @@ namespace AddressBook {
                 Name = tbname.Text,
                 MailAddress = tbMailAddress.Text,
                 Address = tbAddress.Text,
-                Company = tbtbCompany.Text,
+                Company = tbCompany.Text,
                 Picture = pbPicture.Image,
             };
 
@@ -67,7 +67,8 @@ namespace AddressBook {
             tbname.Text = listPerson[index].Name;
             tbMailAddress.Text = listPerson[index].MailAddress;
             tbAddress.Text = listPerson[index].Address;
-            tbtbCompany.Text = listPerson[index].Company;
+            tbCompany.Text = listPerson[index].Company;
+            pbPicture.Image = listPerson[index].Picture;
 
             groupCheckBoxAllClear();
 
@@ -96,7 +97,24 @@ namespace AddressBook {
         }
 
         private void btUpdate_Click(object sender, EventArgs e) {
+            listPerson[dgvPersons.CurrentRow.Index].Name = tbname.Text;
+            listPerson[dgvPersons.CurrentRow.Index].MailAddress = tbMailAddress.Text;
+            listPerson[dgvPersons.CurrentRow.Index].Address = tbAddress.Text;
+            listPerson[dgvPersons.CurrentRow.Index].Company = tbCompany.Text;
+            listPerson[dgvPersons.CurrentRow.Index].listGroup = GetCheckBoxGroup();
+            listPerson[dgvPersons.CurrentRow.Index].Picture = pbPicture.Image;
+            dgvPersons.Refresh();
+        }
 
+        private void btDelete_Click(object sender, EventArgs e) {
+            listPerson.RemoveAt(dgvPersons.CurrentRow.Index);
+            
+        }
+
+        private void Form1_Load(object sender, EventArgs e) {
+            //btDelete.Enabled = false;
+            //btUpdate.Enabled = false;
+            //btPictureClear.Enabled = false;
         }
     }
 }
