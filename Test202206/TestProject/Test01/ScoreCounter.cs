@@ -7,32 +7,43 @@ namespace Test01 {
 
         // コンストラクタ
         public ScoreCounter(string filePath) {
-           // _score = ReadScore(filePath);
+           　_score = ReadScore(filePath);
            
 
         }
 
 
         //メソッドの概要： 
-        /*private static IEnumerable<Student> ReadScore(string filePath) {
-            var dict = new Dictionary<string, int>();
-            foreach (var student in _score) {
-                if (dict.ContainsKey(student.Name))
-                    dict[student.Name] += student.Score;
-                else
-                    dict[student.Name] = student.Score;
+        private static IEnumerable<Student> ReadScore(string filePath) {
+            List<Student> students = new List<Student>();
+            string[] Lines = File.ReadAllLines(filePath);
+            foreach (string Line in Lines) {
+                string[] items = Line.Split(',');
+                Student student = new Student {
+                    Name = items[0],
+                    Subject = items[1],
+                    Score = int.Parse(items[2])
+                };
+                students.Add(student);
             }
-            return dict;
+            return students;
         }
 
         //メソッドの概要： 
         public IDictionary<string, int> GetPerStudentScore() {
-
+            var dict = new Dictionary<string, int>();
+            foreach (var student in _score) {
+                if (dict.ContainsKey(student.Subject))
+                    dict[student.Subject] += student.Score;
+                else
+                    dict[student.Subject] = student.Score;
+            }
+            return dict;
 
 
 
 
             
-        }*/
+        }
     }
 }
