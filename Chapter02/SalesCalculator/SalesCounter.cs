@@ -14,7 +14,7 @@ namespace SalesCalculator {
             _sales = ReadSales(filePath);
         }
 
-        //科目別点数を求める
+        //店舗別売上を求める
         public IDictionary<String, int> GetPerStoreSales() {
             var dict = new Dictionary<string, int>();
             foreach (var sale in _sales) {
@@ -26,7 +26,7 @@ namespace SalesCalculator {
             return dict;
         }
 
-        //生徒データを読み込み、Studentオブジェクトのリストを返す
+        //売上データを読み込み、Saleオブジェクトのリストを返す
         public static IEnumerable<Sale> ReadSales(string filePath) {
             List<Sale> sales = new List<Sale>();
             string[] Lines = File.ReadAllLines(filePath);
