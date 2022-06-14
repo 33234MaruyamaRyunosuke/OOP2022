@@ -33,6 +33,7 @@ namespace AddressBook {
                 Address = tbAddress.Text,
                 Company = tbCompany.Text,
                 Picture = pbPicture.Image,
+                listGroup = GetCheckBoxGroup(),
             };
 
             listPerson.Add(newPerson);
@@ -108,6 +109,12 @@ namespace AddressBook {
 
         private void btDelete_Click(object sender, EventArgs e) {
             listPerson.RemoveAt(dgvPersons.CurrentRow.Index);
+            dgvPersons.Rows[dgvPersons.RowCount - 1].Selected = true;
+
+            if(listPerson.Count() == 0) {
+                btDelete.Enabled = false;
+                btUpdate.Enabled = false;
+            }
             
         }
 
@@ -115,6 +122,7 @@ namespace AddressBook {
             //btDelete.Enabled = false;
             //btUpdate.Enabled = false;
             //btPictureClear.Enabled = false;
+            
         }
     }
 }
