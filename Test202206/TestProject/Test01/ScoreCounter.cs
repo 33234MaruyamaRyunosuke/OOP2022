@@ -8,12 +8,9 @@ namespace Test01 {
         // コンストラクタ
         public ScoreCounter(string filePath) {
            　_score = ReadScore(filePath);
-           
-
         }
 
-
-        //メソッドの概要： 
+        //売り上げデータを読み込み、Saleオブジェクトのリストを返す
         private static IEnumerable<Student> ReadScore(string filePath) {
             List<Student> students = new List<Student>();
             string[] Lines = File.ReadAllLines(filePath);
