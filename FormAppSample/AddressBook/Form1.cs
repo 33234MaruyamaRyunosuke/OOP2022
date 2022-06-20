@@ -27,16 +27,33 @@ namespace AddressBook {
         }
 
         private void btAddPerson_Click(object sender, EventArgs e) {
+
+            if(string.IsNullOrEmpty(tbname.Text)) {
+                MessageBox.Show("氏名が入力されていません");
+                return;
+            }
+
             Person newPerson = new Person {
                 Name = tbname.Text,
                 MailAddress = tbMailAddress.Text,
                 Address = tbAddress.Text,
-                Company = tbCompany.Text,
+                Company = cbCompany.Text,
                 Picture = pbPicture.Image,
                 listGroup = GetCheckBoxGroup(),
             };
 
             listPerson.Add(newPerson);
+            dgvPersons.Rows[dgvPersons.RowCount - 1].Selected = true;
+
+            if(listPerson.Count() > 0) {
+                btDelete.Enabled = true;
+                btUpdate.Enabled = true;
+            }
+
+            if (cbCompany.Items.Contains(cbCompany.Text)) {
+                cbCompany.Items.Add(cbCompany.Text);
+            }
+
         }
 
         private List<Person.GroupType> GetCheckBoxGroup() {
@@ -68,7 +85,7 @@ namespace AddressBook {
             tbname.Text = listPerson[index].Name;
             tbMailAddress.Text = listPerson[index].MailAddress;
             tbAddress.Text = listPerson[index].Address;
-            tbCompany.Text = listPerson[index].Company;
+            cbCompany.Text = listPerson[index].Company;
             pbPicture.Image = listPerson[index].Picture;
 
             groupCheckBoxAllClear();
@@ -101,7 +118,7 @@ namespace AddressBook {
             listPerson[dgvPersons.CurrentRow.Index].Name = tbname.Text;
             listPerson[dgvPersons.CurrentRow.Index].MailAddress = tbMailAddress.Text;
             listPerson[dgvPersons.CurrentRow.Index].Address = tbAddress.Text;
-            listPerson[dgvPersons.CurrentRow.Index].Company = tbCompany.Text;
+            listPerson[dgvPersons.CurrentRow.Index].Company = cbCompany.Text;
             listPerson[dgvPersons.CurrentRow.Index].listGroup = GetCheckBoxGroup();
             listPerson[dgvPersons.CurrentRow.Index].Picture = pbPicture.Image;
             dgvPersons.Refresh();
