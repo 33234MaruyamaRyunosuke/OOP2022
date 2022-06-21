@@ -148,14 +148,14 @@ namespace AddressBook {
 
         private void Form1_Load(object sender, EventArgs e) {
             EnabledCheck();
-
+            
         }
 
         private void EnabledCheck() {
             btUpdate.Enabled = btDelete.Enabled = listPerson.Count() > 0 ? true : false;
         }
 
-        /*private void btSave_Click(object sender, EventArgs e) {
+        private void btSave_Click(object sender, EventArgs e) {
             if (sfdSaveDialog.ShowDialog() == DialogResult.OK) {
                 try {
                     //バイナリ形式でシリアル化
@@ -169,7 +169,7 @@ namespace AddressBook {
                     MessageBox.Show(ex.Message);
                 }
             }
-        }*/
+        }
 
         private void btOpen_Click(object sender, EventArgs e) {
             if (ofdFileOpenDialog.ShowDialog() == DialogResult.OK) {
