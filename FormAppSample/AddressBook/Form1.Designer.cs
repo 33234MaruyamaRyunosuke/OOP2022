@@ -46,8 +46,10 @@ namespace AddressBook {
             this.btDelete = new System.Windows.Forms.Button();
             this.cbCompany = new System.Windows.Forms.ComboBox();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btOpen = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.dtpRegistDate = new System.Windows.Forms.DateTimePicker();
+            this.btSave = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPersons)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPicture)).BeginInit();
             this.SuspendLayout();
@@ -110,7 +112,7 @@ namespace AddressBook {
             this.dgvPersons.Location = new System.Drawing.Point(105, 327);
             this.dgvPersons.Name = "dgvPersons";
             this.dgvPersons.RowTemplate.Height = 21;
-            this.dgvPersons.Size = new System.Drawing.Size(701, 150);
+            this.dgvPersons.Size = new System.Drawing.Size(701, 139);
             this.dgvPersons.TabIndex = 5;
             // 
             // tbname
@@ -255,33 +257,53 @@ namespace AddressBook {
             this.cbCompany.Size = new System.Drawing.Size(329, 32);
             this.cbCompany.TabIndex = 20;
             // 
-            // button1
+            // btOpen
             // 
-            this.button1.Font = new System.Drawing.Font("MS UI Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.button1.Location = new System.Drawing.Point(12, 358);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(74, 39);
-            this.button1.TabIndex = 21;
-            this.button1.Text = "開く...";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btOpen.Font = new System.Drawing.Font("MS UI Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.btOpen.Location = new System.Drawing.Point(12, 358);
+            this.btOpen.Name = "btOpen";
+            this.btOpen.Size = new System.Drawing.Size(74, 39);
+            this.btOpen.TabIndex = 21;
+            this.btOpen.Text = "開く...";
+            this.btOpen.UseVisualStyleBackColor = true;
+            this.btOpen.Click += new System.EventHandler(this.btOpen_Click);
             // 
-            // button2
+            // label6
             // 
-            this.button2.Font = new System.Drawing.Font("MS UI Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.button2.Location = new System.Drawing.Point(12, 427);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(74, 39);
-            this.button2.TabIndex = 22;
-            this.button2.Text = "保存...";
-            this.button2.UseVisualStyleBackColor = true;
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label6.Location = new System.Drawing.Point(572, 475);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(47, 12);
+            this.label6.TabIndex = 23;
+            this.label6.Text = "登録日...";
+            // 
+            // dtpRegistDate
+            // 
+            this.dtpRegistDate.Location = new System.Drawing.Point(625, 470);
+            this.dtpRegistDate.Name = "dtpRegistDate";
+            this.dtpRegistDate.Size = new System.Drawing.Size(200, 19);
+            this.dtpRegistDate.TabIndex = 24;
+            // 
+            // btSave
+            // 
+            this.btSave.Font = new System.Drawing.Font("MS UI Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.btSave.Location = new System.Drawing.Point(12, 427);
+            this.btSave.Name = "btSave";
+            this.btSave.Size = new System.Drawing.Size(74, 39);
+            this.btSave.TabIndex = 25;
+            this.btSave.Text = "保存...";
+            this.btSave.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(845, 492);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btSave);
+            this.Controls.Add(this.dtpRegistDate);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.btOpen);
             this.Controls.Add(this.cbCompany);
             this.Controls.Add(this.btDelete);
             this.Controls.Add(this.btUpdate);
@@ -335,8 +357,10 @@ namespace AddressBook {
         private System.Windows.Forms.Button btDelete;
         private System.Windows.Forms.ComboBox cbCompany;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btOpen;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.DateTimePicker dtpRegistDate;
+        private System.Windows.Forms.Button btSave;
     }
 }
 
