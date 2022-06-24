@@ -42,6 +42,8 @@ namespace AddressBook {
                 Company = cbCompany.Text,
                 Picture = pbPicture.Image,
                 listGroup = GetCheckBoxGroup(),
+                KindNumber = GetRadioButtonKindNumber(),
+                TelNumber = tbTelNumber.Text,
                 Registration = dtpRegistDate.Value,
             };
 
@@ -54,6 +56,17 @@ namespace AddressBook {
             }
 
             setCbCompany(cbCompany.Text);
+        }
+
+        private Person.KindNumbertype GetRadioButtonKindNumber() {
+            var selectedKindNumber = Person.KindNumbertype.その他;
+            if (rbHome.Checked) {
+                return Person.KindNumbertype.自宅;
+            }
+            if (rbHome.Checked) {
+                return Person.KindNumbertype.携帯;
+            }
+            return selectedKindNumber;
         }
 
         //コンボボックスに会社名を登録する（重複なし）
@@ -95,13 +108,17 @@ namespace AddressBook {
             tbAddress.Text = listPerson[index].Address;
             cbCompany.Text = listPerson[index].Company;
             pbPicture.Image = listPerson[index].Picture;
-            
-            dtpRegistDate.Value = 
-                listPerson[index].Registration.Year > 1900 ? listPerson[index].Registration : DateTime.Today ;
 
+            dtpRegistDate.Value =
+                listPerson[index].Registration.Year > 1900 ? listPerson[index].Registration : DateTime.Today;
+
+            setGroupType(index);
+            setKindNumberType(index);
+        }
+        private void setKindNumberType(int index) {
             groupCheckBoxAllClear();
 
-            foreach(var group in listPerson[index].listGroup) {
+            foreach (var group in listPerson[index].listGroup) {
                 switch (group) {
                     case Person.GroupType.家族:
                         cbFamily.Checked = true;
@@ -118,6 +135,24 @@ namespace AddressBook {
                     default:
                         break;
                 }
+            }
+            
+        }
+
+        private void setGroupType(int index) {
+            switch (listPerson[index].KindNumber) {
+                case Person.KindNumbertype.自宅:
+                    cbOther.Checked = true;
+                    break;
+
+                case Person.KindNumbertype.携帯:
+                    cbOther.Checked = true;
+                    break;
+
+                case Person.KindNumbertype.その他:
+                    break;
+                default:
+                    break;
             }
         }
 

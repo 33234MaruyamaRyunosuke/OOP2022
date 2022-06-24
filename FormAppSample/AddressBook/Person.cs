@@ -45,7 +45,8 @@ namespace AddressBook {
 
         public enum KindNumbertype {
             自宅,
-            携帯
+            携帯,
+            その他
         }
     }
 }
