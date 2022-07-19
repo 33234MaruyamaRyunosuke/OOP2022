@@ -16,9 +16,5 @@ namespace CarReportSystem
         {
             InitializeComponent();
         }
-
-        private void btend_Click(object sender, EventArgs e) {
-
-        }
     }
 }
