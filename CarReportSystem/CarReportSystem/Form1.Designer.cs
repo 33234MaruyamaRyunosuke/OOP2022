@@ -49,14 +49,14 @@ namespace CarReportSystem
             this.radioButton5 = new System.Windows.Forms.RadioButton();
             this.ofdCarReportOpen = new System.Windows.Forms.OpenFileDialog();
             this.sfdCarReportSave = new System.Windows.Forms.SaveFileDialog();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btOpenReport = new System.Windows.Forms.Button();
+            this.btPictureOpen = new System.Windows.Forms.Button();
+            this.btSaveReport = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
+            this.btAddReport = new System.Windows.Forms.Button();
+            this.btModifyReport = new System.Windows.Forms.Button();
+            this.btDeleteReport = new System.Windows.Forms.Button();
+            this.btPictureDelete = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbPicture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCarReport)).BeginInit();
             this.SuspendLayout();
@@ -224,32 +224,32 @@ namespace CarReportSystem
             // 
             this.ofdCarReportOpen.FileName = "openFileDialog1";
             // 
-            // button1
+            // btOpenReport
             // 
-            this.button1.Location = new System.Drawing.Point(12, 348);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "開く...";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btOpenReport.Location = new System.Drawing.Point(12, 348);
+            this.btOpenReport.Name = "btOpenReport";
+            this.btOpenReport.Size = new System.Drawing.Size(75, 23);
+            this.btOpenReport.TabIndex = 14;
+            this.btOpenReport.Text = "開く...";
+            this.btOpenReport.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btPictureOpen
             // 
-            this.button2.Location = new System.Drawing.Point(600, 59);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 15;
-            this.button2.Text = "開く...";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btPictureOpen.Location = new System.Drawing.Point(600, 59);
+            this.btPictureOpen.Name = "btPictureOpen";
+            this.btPictureOpen.Size = new System.Drawing.Size(75, 23);
+            this.btPictureOpen.TabIndex = 15;
+            this.btPictureOpen.Text = "開く...";
+            this.btPictureOpen.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btSaveReport
             // 
-            this.button3.Location = new System.Drawing.Point(12, 377);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 16;
-            this.button3.Text = "保存";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btSaveReport.Location = new System.Drawing.Point(12, 377);
+            this.btSaveReport.Name = "btSaveReport";
+            this.btSaveReport.Size = new System.Drawing.Size(75, 23);
+            this.btSaveReport.TabIndex = 16;
+            this.btSaveReport.Text = "保存";
+            this.btSaveReport.UseVisualStyleBackColor = true;
             // 
             // button4
             // 
@@ -260,55 +260,55 @@ namespace CarReportSystem
             this.button4.Text = "閉じる";
             this.button4.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // btAddReport
             // 
-            this.button5.Location = new System.Drawing.Point(522, 245);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(68, 37);
-            this.button5.TabIndex = 18;
-            this.button5.Text = "追加";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btAddReport.Location = new System.Drawing.Point(522, 245);
+            this.btAddReport.Name = "btAddReport";
+            this.btAddReport.Size = new System.Drawing.Size(68, 37);
+            this.btAddReport.TabIndex = 18;
+            this.btAddReport.Text = "追加";
+            this.btAddReport.UseVisualStyleBackColor = true;
             // 
-            // button6
+            // btModifyReport
             // 
-            this.button6.Location = new System.Drawing.Point(607, 245);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(68, 37);
-            this.button6.TabIndex = 19;
-            this.button6.Text = "編集";
-            this.button6.UseVisualStyleBackColor = true;
+            this.btModifyReport.Location = new System.Drawing.Point(607, 245);
+            this.btModifyReport.Name = "btModifyReport";
+            this.btModifyReport.Size = new System.Drawing.Size(68, 37);
+            this.btModifyReport.TabIndex = 19;
+            this.btModifyReport.Text = "編集";
+            this.btModifyReport.UseVisualStyleBackColor = true;
             // 
-            // button7
+            // btDeleteReport
             // 
-            this.button7.Location = new System.Drawing.Point(691, 245);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(68, 37);
-            this.button7.TabIndex = 20;
-            this.button7.Text = "削除";
-            this.button7.UseVisualStyleBackColor = true;
+            this.btDeleteReport.Location = new System.Drawing.Point(691, 245);
+            this.btDeleteReport.Name = "btDeleteReport";
+            this.btDeleteReport.Size = new System.Drawing.Size(68, 37);
+            this.btDeleteReport.TabIndex = 20;
+            this.btDeleteReport.Text = "削除";
+            this.btDeleteReport.UseVisualStyleBackColor = true;
             // 
-            // button8
+            // btPictureDelete
             // 
-            this.button8.Location = new System.Drawing.Point(684, 59);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(75, 23);
-            this.button8.TabIndex = 21;
-            this.button8.Text = "削除";
-            this.button8.UseVisualStyleBackColor = true;
+            this.btPictureDelete.Location = new System.Drawing.Point(684, 59);
+            this.btPictureDelete.Name = "btPictureDelete";
+            this.btPictureDelete.Size = new System.Drawing.Size(75, 23);
+            this.btPictureDelete.TabIndex = 21;
+            this.btPictureDelete.Text = "削除";
+            this.btPictureDelete.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button8);
-            this.Controls.Add(this.button7);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button5);
+            this.Controls.Add(this.btPictureDelete);
+            this.Controls.Add(this.btDeleteReport);
+            this.Controls.Add(this.btModifyReport);
+            this.Controls.Add(this.btAddReport);
             this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btSaveReport);
+            this.Controls.Add(this.btPictureOpen);
+            this.Controls.Add(this.btOpenReport);
             this.Controls.Add(this.radioButton5);
             this.Controls.Add(this.rbImport);
             this.Controls.Add(this.rbSubaru);
@@ -357,14 +357,14 @@ namespace CarReportSystem
         private System.Windows.Forms.RadioButton radioButton5;
         private System.Windows.Forms.OpenFileDialog ofdCarReportOpen;
         private System.Windows.Forms.SaveFileDialog sfdCarReportSave;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btOpenReport;
+        private System.Windows.Forms.Button btPictureOpen;
+        private System.Windows.Forms.Button btSaveReport;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button btAddReport;
+        private System.Windows.Forms.Button btModifyReport;
+        private System.Windows.Forms.Button btDeleteReport;
+        private System.Windows.Forms.Button btPictureDelete;
     }
 }
 
