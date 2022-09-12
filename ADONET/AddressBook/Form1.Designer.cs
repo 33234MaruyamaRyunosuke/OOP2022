@@ -49,12 +49,16 @@ namespace AddressBook {
             this.btConnect = new System.Windows.Forms.Button();
             this.btUpdate = new System.Windows.Forms.Button();
             this.btAdd = new System.Windows.Forms.Button();
-            this.addressTableTableAdapter = new AddressBook.infosys202200DataSetTableAdapters.AddressTableTableAdapter();
-            this.tableAdapterManager = new AddressBook.infosys202200DataSetTableAdapters.TableAdapterManager();
             this.pbImage = new System.Windows.Forms.PictureBox();
             this.btImageOpen = new System.Windows.Forms.Button();
             this.btImageClear = new System.Windows.Forms.Button();
             this.ofdImage = new System.Windows.Forms.OpenFileDialog();
+            this.btNameSearch = new System.Windows.Forms.Button();
+            this.tbNameSearch = new System.Windows.Forms.TextBox();
+            this.addressTableTableAdapter = new AddressBook.infosys202200DataSetTableAdapters.AddressTableTableAdapter();
+            this.tableAdapterManager = new AddressBook.infosys202200DataSetTableAdapters.TableAdapterManager();
+            this.btClear = new System.Windows.Forms.Button();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             ((System.ComponentModel.ISupportInitialize)(this.addressTableDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.addressTableBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.infosys202200DataSet)).BeginInit();
@@ -76,7 +80,7 @@ namespace AddressBook {
             this.dataGridViewTextBoxColumn6,
             this.Image});
             this.addressTableDataGridView.DataSource = this.addressTableBindingSource;
-            this.addressTableDataGridView.Location = new System.Drawing.Point(12, 280);
+            this.addressTableDataGridView.Location = new System.Drawing.Point(8, 337);
             this.addressTableDataGridView.MultiSelect = false;
             this.addressTableDataGridView.Name = "addressTableDataGridView";
             this.addressTableDataGridView.ReadOnly = true;
@@ -267,16 +271,6 @@ namespace AddressBook {
             this.btAdd.UseVisualStyleBackColor = true;
             this.btAdd.Click += new System.EventHandler(this.btAdd_Click);
             // 
-            // addressTableTableAdapter
-            // 
-            this.addressTableTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.AddressTableTableAdapter = this.addressTableTableAdapter;
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.UpdateOrder = AddressBook.infosys202200DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            // 
             // pbImage
             // 
             this.pbImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -310,11 +304,60 @@ namespace AddressBook {
             // 
             this.ofdImage.FileName = "openFileDialog1";
             // 
+            // btNameSearch
+            // 
+            this.btNameSearch.Location = new System.Drawing.Point(28, 297);
+            this.btNameSearch.Name = "btNameSearch";
+            this.btNameSearch.Size = new System.Drawing.Size(75, 23);
+            this.btNameSearch.TabIndex = 7;
+            this.btNameSearch.Text = "名前検索";
+            this.btNameSearch.UseVisualStyleBackColor = true;
+            this.btNameSearch.Click += new System.EventHandler(this.btNameSearch_Click);
+            // 
+            // tbNameSearch
+            // 
+            this.tbNameSearch.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.tbNameSearch.Location = new System.Drawing.Point(109, 297);
+            this.tbNameSearch.Name = "tbNameSearch";
+            this.tbNameSearch.Size = new System.Drawing.Size(143, 31);
+            this.tbNameSearch.TabIndex = 8;
+            // 
+            // addressTableTableAdapter
+            // 
+            this.addressTableTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.AddressTableTableAdapter = this.addressTableTableAdapter;
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.UpdateOrder = AddressBook.infosys202200DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
+            // btClear
+            // 
+            this.btClear.Location = new System.Drawing.Point(619, 280);
+            this.btClear.Name = "btClear";
+            this.btClear.Size = new System.Drawing.Size(119, 34);
+            this.btClear.TabIndex = 9;
+            this.btClear.Text = "クリア";
+            this.btClear.UseVisualStyleBackColor = true;
+            this.btClear.Click += new System.EventHandler(this.btClear_Click);
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(804, 24);
+            this.menuStrip1.TabIndex = 10;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(804, 520);
+            this.ClientSize = new System.Drawing.Size(804, 569);
+            this.Controls.Add(this.btClear);
+            this.Controls.Add(this.tbNameSearch);
+            this.Controls.Add(this.btNameSearch);
             this.Controls.Add(this.btImageClear);
             this.Controls.Add(this.btImageOpen);
             this.Controls.Add(this.pbImage);
@@ -332,6 +375,8 @@ namespace AddressBook {
             this.Controls.Add(this.tbAddress);
             this.Controls.Add(this.tbName);
             this.Controls.Add(this.addressTableDataGridView);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -375,6 +420,10 @@ namespace AddressBook {
         private System.Windows.Forms.Button btImageOpen;
         private System.Windows.Forms.Button btImageClear;
         private System.Windows.Forms.OpenFileDialog ofdImage;
+        private System.Windows.Forms.Button btNameSearch;
+        private System.Windows.Forms.TextBox tbNameSearch;
+        private System.Windows.Forms.Button btClear;
+        private System.Windows.Forms.MenuStrip menuStrip1;
     }
 }
 
