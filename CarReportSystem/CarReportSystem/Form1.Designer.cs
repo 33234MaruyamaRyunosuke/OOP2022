@@ -35,7 +35,6 @@ namespace CarReportSystem
             this.label4 = new System.Windows.Forms.Label();
             this.dtpDate = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
-            this.cbAuther = new System.Windows.Forms.ComboBox();
             this.cbCarName = new System.Windows.Forms.ComboBox();
             this.tbReport = new System.Windows.Forms.TextBox();
             this.pbPicture = new System.Windows.Forms.PictureBox();
@@ -57,6 +56,8 @@ namespace CarReportSystem
             this.btModifyReport = new System.Windows.Forms.Button();
             this.btDeleteReport = new System.Windows.Forms.Button();
             this.btPictureDelete = new System.Windows.Forms.Button();
+            this.cbAuther = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbPicture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCarReport)).BeginInit();
             this.SuspendLayout();
@@ -112,14 +113,6 @@ namespace CarReportSystem
             this.label5.Size = new System.Drawing.Size(48, 12);
             this.label5.TabIndex = 2;
             this.label5.Text = "レポート：";
-            // 
-            // cbAuther
-            // 
-            this.cbAuther.FormattingEnabled = true;
-            this.cbAuther.Location = new System.Drawing.Point(76, 65);
-            this.cbAuther.Name = "cbAuther";
-            this.cbAuther.Size = new System.Drawing.Size(267, 20);
-            this.cbAuther.TabIndex = 3;
             // 
             // cbCarName
             // 
@@ -296,11 +289,30 @@ namespace CarReportSystem
             this.btPictureDelete.Text = "削除";
             this.btPictureDelete.UseVisualStyleBackColor = true;
             // 
+            // cbAuther
+            // 
+            this.cbAuther.FormattingEnabled = true;
+            this.cbAuther.Location = new System.Drawing.Point(78, 65);
+            this.cbAuther.Name = "cbAuther";
+            this.cbAuther.Size = new System.Drawing.Size(240, 20);
+            this.cbAuther.TabIndex = 22;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(23, 288);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(59, 12);
+            this.label6.TabIndex = 23;
+            this.label6.Text = "記事一覧：";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.cbAuther);
             this.Controls.Add(this.btPictureDelete);
             this.Controls.Add(this.btDeleteReport);
             this.Controls.Add(this.btModifyReport);
@@ -319,7 +331,6 @@ namespace CarReportSystem
             this.Controls.Add(this.pbPicture);
             this.Controls.Add(this.tbReport);
             this.Controls.Add(this.cbCarName);
-            this.Controls.Add(this.cbAuther);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.dtpDate);
             this.Controls.Add(this.label4);
@@ -344,7 +355,6 @@ namespace CarReportSystem
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DateTimePicker dtpDate;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox cbAuther;
         private System.Windows.Forms.ComboBox cbCarName;
         private System.Windows.Forms.TextBox tbReport;
         private System.Windows.Forms.PictureBox pbPicture;
@@ -366,6 +376,8 @@ namespace CarReportSystem
         private System.Windows.Forms.Button btModifyReport;
         private System.Windows.Forms.Button btDeleteReport;
         private System.Windows.Forms.Button btPictureDelete;
+        private System.Windows.Forms.ComboBox cbAuther;
+        private System.Windows.Forms.Label label6;
     }
 }
 
