@@ -23,11 +23,10 @@ namespace CarReportSystem {
         int mode = 0;
         public Form1() {
             InitializeComponent();
-            dgvCarReport.DataSource = listCarReports;
+          　carReportDBDataGridView.DataSource = listCarReports;
         }
 
-        private void btExit_Click(object sender, EventArgs e) {
-            //アプリケーションの終了
+        private void btExit_Click_1(object sender, EventArgs e) {
             Application.Exit();
         }
 
@@ -79,7 +78,10 @@ namespace CarReportSystem {
                 CarName = cbCarName.Text,
                 Report = tbReport.Text,
                 Picture = pbPicture.Image,
+
+
             };
+
             listCarReports.Add(carReport);
 
             //EnabledCheck(); //マスク処理呼び出し
@@ -109,17 +111,17 @@ namespace CarReportSystem {
         }
 
         private void btModifyReport_Click(object sender, EventArgs e) {
-            listCarReports[dgvCarReport.CurrentRow.Index].Date = dtpDate.Value;
-            listCarReports[dgvCarReport.CurrentRow.Index].Auther = cbAuther.Text;
-            listCarReports[dgvCarReport.CurrentRow.Index].Maker = GetRadioButtonMaker();
-            listCarReports[dgvCarReport.CurrentRow.Index].CarName = cbCarName.Text;
-            listCarReports[dgvCarReport.CurrentRow.Index].Report = tbReport.Text;
-            listCarReports[dgvCarReport.CurrentRow.Index].Picture = pbPicture.Image;
-            dgvCarReport.Refresh(); //データグリッドビュー更新
+            listCarReports[carReportDBDataGridView.CurrentRow.Index].Date = dtpDate.Value;
+            listCarReports[carReportDBDataGridView.CurrentRow.Index].Auther = cbAuther.Text;
+            listCarReports[carReportDBDataGridView.CurrentRow.Index].Maker = GetRadioButtonMaker();
+            listCarReports[carReportDBDataGridView.CurrentRow.Index].CarName = cbCarName.Text;
+            listCarReports[carReportDBDataGridView.CurrentRow.Index].Report = tbReport.Text;
+            listCarReports[carReportDBDataGridView.CurrentRow.Index].Picture = pbPicture.Image;
+            carReportDBDataGridView.Refresh(); //データグリッドビュー更新
         }
 
         private void btDeleteReport_Click(object sender, EventArgs e) {
-            listCarReports.RemoveAt(dgvCarReport.CurrentRow.Index);
+            listCarReports.RemoveAt(carReportDBDataGridView.CurrentRow.Index);
             EnabledCheck(); //マスク処理呼び出し
 
         }
@@ -161,8 +163,8 @@ namespace CarReportSystem {
                     using (FileStream fs = File.Open(ofdCarReportOpen.FileName, FileMode.Open, FileAccess.Read)) {
                         //逆シリアル化して読み込む
                         listCarReports = (BindingList<CarReport>)bf.Deserialize(fs);
-                        dgvCarReport.DataSource = null;
-                        dgvCarReport.DataSource = listCarReports;
+                        carReportDBDataGridView.DataSource = null;
+                        carReportDBDataGridView.DataSource = listCarReports;
                     }
                 }
                 catch (Exception ex) {
@@ -197,6 +199,15 @@ namespace CarReportSystem {
         }
 
         private void Form1_Load_1(object sender, EventArgs e) {
+            
+            
+
+        }
+
+        private void carReportDBBindingNavigatorSaveItem_Click(object sender, EventArgs e) {
+            this.Validate();
+            this.carReportDBBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.infosys202222DataSet);
 
         }
 
