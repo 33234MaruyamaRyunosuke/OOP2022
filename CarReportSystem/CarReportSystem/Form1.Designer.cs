@@ -45,7 +45,7 @@ namespace CarReportSystem
             this.rbHonda = new System.Windows.Forms.RadioButton();
             this.rbSubaru = new System.Windows.Forms.RadioButton();
             this.rbImport = new System.Windows.Forms.RadioButton();
-            this.radioButton5 = new System.Windows.Forms.RadioButton();
+            this.rbOther = new System.Windows.Forms.RadioButton();
             this.ofdCarReportOpen = new System.Windows.Forms.OpenFileDialog();
             this.sfdCarReportSave = new System.Windows.Forms.SaveFileDialog();
             this.btOpenReport = new System.Windows.Forms.Button();
@@ -210,16 +210,16 @@ namespace CarReportSystem
             this.rbImport.Text = "外国車";
             this.rbImport.UseVisualStyleBackColor = true;
             // 
-            // radioButton5
+            // rbOther
             // 
-            this.radioButton5.AutoSize = true;
-            this.radioButton5.Location = new System.Drawing.Point(364, 103);
-            this.radioButton5.Name = "radioButton5";
-            this.radioButton5.Size = new System.Drawing.Size(54, 16);
-            this.radioButton5.TabIndex = 13;
-            this.radioButton5.TabStop = true;
-            this.radioButton5.Text = "その他";
-            this.radioButton5.UseVisualStyleBackColor = true;
+            this.rbOther.AutoSize = true;
+            this.rbOther.Location = new System.Drawing.Point(364, 103);
+            this.rbOther.Name = "rbOther";
+            this.rbOther.Size = new System.Drawing.Size(54, 16);
+            this.rbOther.TabIndex = 13;
+            this.rbOther.TabStop = true;
+            this.rbOther.Text = "その他";
+            this.rbOther.UseVisualStyleBackColor = true;
             // 
             // ofdCarReportOpen
             // 
@@ -353,6 +353,7 @@ namespace CarReportSystem
             this.carReportDBDataGridView.RowTemplate.Height = 21;
             this.carReportDBDataGridView.Size = new System.Drawing.Size(749, 220);
             this.carReportDBDataGridView.TabIndex = 27;
+            this.carReportDBDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.carReportDBDataGridView_CellContentClick);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -429,7 +430,7 @@ namespace CarReportSystem
             this.Controls.Add(this.btSaveReport);
             this.Controls.Add(this.btPictureOpen);
             this.Controls.Add(this.btOpenReport);
-            this.Controls.Add(this.radioButton5);
+            this.Controls.Add(this.rbOther);
             this.Controls.Add(this.rbImport);
             this.Controls.Add(this.rbSubaru);
             this.Controls.Add(this.rbHonda);
@@ -476,7 +477,7 @@ namespace CarReportSystem
         private System.Windows.Forms.RadioButton rbHonda;
         private System.Windows.Forms.RadioButton rbSubaru;
         private System.Windows.Forms.RadioButton rbImport;
-        private System.Windows.Forms.RadioButton radioButton5;
+        private System.Windows.Forms.RadioButton rbOther;
         private System.Windows.Forms.OpenFileDialog ofdCarReportOpen;
         private System.Windows.Forms.SaveFileDialog sfdCarReportSave;
         private System.Windows.Forms.Button btOpenReport;

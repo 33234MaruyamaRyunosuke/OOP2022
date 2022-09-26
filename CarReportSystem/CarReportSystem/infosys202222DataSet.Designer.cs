@@ -115,7 +115,9 @@ namespace CarReportSystem {
                 return base.Relations;
             }
         }
-        
+
+        public CarReportDBDataTable AddressTable { get; internal set; }
+
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         protected override void InitializeDerivedDataSet() {
