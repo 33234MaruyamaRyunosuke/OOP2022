@@ -41,8 +41,35 @@ namespace Chapter15 {
             }
 
             Console.WriteLine();
-                
-                
+            /*var groups = Library.Books
+                .GroupBy(b => b.PublishedYear)
+                .Select(group => group.OrderByDescending(b => b.Price).First())
+                .Where(b => years.Contains(b.PublishedYear))
+                .OrderBy(g => g.Key);*/
+
+            var selected = Library.Books
+                .Where(b => years.Contains(b.PublishedYear))
+                .OrderByDescending(b => b.PublishedYear)
+                .ThenBy(b => b.PublishedYear)
+                .Join(Library.Categories,
+                        book => book.CategoryId,
+                        category => category.Id,
+                        (book, Category) => new {
+                            Title = book.Title,
+                            Category = Category.Name,
+                            PublishedYear = book.PublishedYear,
+                            price = book.Price,
+                        }
+                ).ToList();
+
+            foreach (var book in selected
+                                    .OrderByDescending(x=>x.PublishedYear)
+                                    .ThenBy(x=>x.Category)) {
+
+                Console.WriteLine($"{book.PublishedYear},{book.Title},{book.Category},{book.price}");
+            }
+            Console.WriteLine($"金額の合計{selected.Sum(b => b.price)}円");
+
         }
     }
 }
