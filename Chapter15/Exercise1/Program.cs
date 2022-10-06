@@ -40,13 +40,40 @@ namespace Exercise1 {
         }
 
         private static void Exercise1_4() {
-            /*var books = Library.Books
-                .OrderBy(b => b.CategoryId)
-                .ThenBy(b => b.PublishedYear)
-                .Join(Library.Categories,book => book.CategoryId)*/
+            var query = Library.Books
+                .Join(Library.Categories,
+                    book => book.CategoryId,
+                    Category => Category.Id,
+                    (book, Category) => new {
+                        book.Title,
+                        book.PublishedYear,
+                        book.Price,
+                        CategoryName = Category.Name
+                    })
+                .OrderByDescending(x => x.PublishedYear)
+                .ThenByDescending(x => x.Price);
+
+            foreach (var item in query)
+                Console.WriteLine("{0}年 {1}円 {2} ({3})",
+                    item.PublishedYear,
+                    item.Price,
+                    item.Title,
+                    item.CategoryName
+                    );
+                    
         }
 
         private static void Exercise1_5() {
+            var query = Library.Books
+                .Where(b => b.PublishedYear == 2016)
+                .Join(Library.Categories,
+                    book => book.CategoryId,
+                    Category => Category.Id,
+                    (book, Category) => Category.Name)
+                .Distinct();
+
+            foreach (var name in query)
+                Console.WriteLine(name);
         }
 
         private static void Exercise1_6() {
