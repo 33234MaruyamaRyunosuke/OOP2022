@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CarReportSystem.Properties {
+namespace SampleEntityFramework.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
@@ -28,9 +28,9 @@ namespace CarReportSystem.Properties {
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
         [global::System.Configuration.DefaultSettingValueAttribute("Data Source=172.16.45.1;Initial Catalog=infosys202222;Persist Security Info=True;" +
             "User ID=gu;Password=c42dbpass")]
-        public string infosys202222ConnectionString {
+        public string BooksDbConnectionString {
             get {
-                return ((string)(this["infosys202222ConnectionString"]));
+                return ((string)(this["BooksDbConnectionString"]));
             }
         }
     }

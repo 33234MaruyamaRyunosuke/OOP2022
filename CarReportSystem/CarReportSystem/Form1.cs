@@ -20,6 +20,13 @@ namespace CarReportSystem {
         //カーレポート管理用リスト
         BindingList<CarReport> listCarReports = new BindingList<CarReport>();
 
+        private void addressTableBindingNavigatorSaveItem_Click(object sender, EventArgs e) {
+            this.Validate();
+            this.infosys202222DataSetBindingSource.EndEdit();
+            this.carReportDBTableAdapter1.UpdateAll(this.infosys202222DataSet);
+
+        }
+
         int mode = 0;
         public Form1() {
             InitializeComponent();
@@ -116,6 +123,10 @@ namespace CarReportSystem {
             listCarReports[dgvCarReport.CurrentRow.Index].Report = tbReport.Text;
             listCarReports[dgvCarReport.CurrentRow.Index].Picture = pbPicture.Image;
             dgvCarReport.Refresh(); //データグリッドビュー更新
+
+            this.Validate();
+            this.infosys202222DataSetBindingSource.EndEdit();
+            this.tableAdapterManager1.UpdateAll(this.infosys202222DataSet);
         }
 
         private void btDeleteReport_Click(object sender, EventArgs e) {
@@ -154,6 +165,9 @@ namespace CarReportSystem {
         }
 
         private void btOpenReport_Click(object sender, EventArgs e) {
+
+            this.carReportDBTableAdapter1.Fill(this.infosys202222DataSet.CarReportDB);
+
             if (ofdCarReportOpen.ShowDialog() == DialogResult.OK) {
                 try {
                     //バイナリ形式で逆シリアル化
@@ -178,6 +192,8 @@ namespace CarReportSystem {
                     setCbCarName(item);
                 }
             }
+
+            
             EnabledCheck(); //マスク処理呼び出し
         }
 
@@ -199,5 +215,33 @@ namespace CarReportSystem {
         private void Form1_Load_1(object sender, EventArgs e) {
 
         }
+
+        private void dgvCarReport_CellContentClick(object sender, DataGridViewCellEventArgs e) {
+            if (dgvCarReport.CurrentRow == null)
+                return;
+
+            //データグリッドビューの選択レコードを各テキストボックスへ設定
+            DataRow newRow = infosys202222DataSet.CarReportDB.NewRow();
+            newRow[1] = dtpDate.Text;
+            newRow[2] = cbAuther.Text;
+            newRow[4] = cbCarName.Text;
+            newRow[5] = tbReport.Text;
+
+            if (!(dgvCarReport.CurrentRow.Cells[6].Value is DBNull))
+                pbPicture.Image = ByteArrayToImage((byte[])dgvCarReport.CurrentRow.Cells[6].Value);
+            else
+                pbPicture.Image = null;
+
+            infosys202222DataSet.CarReportDB.Rows.Add(newRow);
+            this.carReportDBTableAdapter1.Update(this.infosys202222DataSet.CarReportDB);
+        }
+
+        public static Image ByteArrayToImage(byte[] b) {
+            ImageConverter imgconv = new ImageConverter();
+            Image img = (Image)imgconv.ConvertFrom(b);
+            return img;
+        }
+
+       
     }
 }
