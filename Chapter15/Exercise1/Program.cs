@@ -31,10 +31,19 @@ namespace Exercise1 {
         }
 
         private static void Exercise1_3() {
-
+            var query = Library.Books.GroupBy(b => b.PublishedYear);
+                
+            
+            foreach(var item in query.OrderBy(b=>b.Key)) {
+                Console.WriteLine("{0}年 {1}冊", item.Key, item.Count());
+            }
         }
 
         private static void Exercise1_4() {
+            /*var books = Library.Books
+                .OrderBy(b => b.CategoryId)
+                .ThenBy(b => b.PublishedYear)
+                .Join(Library.Categories,book => book.CategoryId)*/
         }
 
         private static void Exercise1_5() {
