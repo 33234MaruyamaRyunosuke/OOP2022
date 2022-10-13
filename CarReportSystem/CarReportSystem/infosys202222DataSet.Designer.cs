@@ -10,8 +10,6 @@
 
 #pragma warning disable 1591
 
-using System;
-
 namespace CarReportSystem {
     
     
@@ -1308,10 +1306,6 @@ SELECT Id, Date, Author, Maker, CarName, Report, Image FROM CarReportDB WHERE (I
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(global::System.Nullable<global::System.DateTime> Date, string Author, string Maker, string CarName, string Report, byte[] Image, int Original_Id, global::System.Nullable<global::System.DateTime> Original_Date, string Original_Author, string Original_Maker, string Original_CarName) {
             return this.Update(Original_Id, Date, Author, Maker, CarName, Report, Image, Original_Id, Original_Date, Original_Author, Original_Maker, Original_CarName);
-        }
-
-        internal void UpdateAll(infosys202222DataSet infosys202222DataSet) {
-            throw new NotImplementedException();
         }
     }
     

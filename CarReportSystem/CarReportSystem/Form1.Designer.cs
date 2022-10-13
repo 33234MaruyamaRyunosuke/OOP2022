@@ -62,6 +62,8 @@ namespace CarReportSystem
             this.btPictureDelete = new System.Windows.Forms.Button();
             this.carReportDBTableAdapter1 = new CarReportSystem.infosys202222DataSetTableAdapters.CarReportDBTableAdapter();
             this.tableAdapterManager1 = new CarReportSystem.infosys202222DataSetTableAdapters.TableAdapterManager();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Data = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pbPicture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCarReport)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.infosys202222DataSetBindingSource)).BeginInit();
@@ -158,6 +160,9 @@ namespace CarReportSystem
             this.dgvCarReport.AllowUserToDeleteRows = false;
             this.dgvCarReport.AutoGenerateColumns = false;
             this.dgvCarReport.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCarReport.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Id,
+            this.Data});
             this.dgvCarReport.DataSource = this.infosys202222DataSetBindingSource;
             this.dgvCarReport.Location = new System.Drawing.Point(93, 302);
             this.dgvCarReport.Name = "dgvCarReport";
@@ -329,6 +334,18 @@ namespace CarReportSystem
             this.tableAdapterManager1.CarReportDBTableAdapter = this.carReportDBTableAdapter1;
             this.tableAdapterManager1.UpdateOrder = CarReportSystem.infosys202222DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
+            // Id
+            // 
+            this.Id.HeaderText = "Id";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            // 
+            // Data
+            // 
+            this.Data.HeaderText = "Date";
+            this.Data.Name = "Data";
+            this.Data.ReadOnly = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -405,6 +422,8 @@ namespace CarReportSystem
         private System.Windows.Forms.BindingSource infosys202222DataSetBindingSource;
         private infosys202222DataSetTableAdapters.CarReportDBTableAdapter carReportDBTableAdapter1;
         private infosys202222DataSetTableAdapters.TableAdapterManager tableAdapterManager1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Data;
     }
 }
 

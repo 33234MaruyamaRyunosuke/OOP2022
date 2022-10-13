@@ -22,8 +22,28 @@ namespace SampleApplication {
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e) {
-            MessageBox.Show("ボタンが押された。");
+        private void checkBox_Checked(object sender, RoutedEventArgs e) {
+            checkBoxTextBlock.Text = "チェック済み";
+        }
+
+        private void checkBox_UnChecked(object sender, RoutedEventArgs e) {
+            checkBoxTextBlock.Text = "未チェック";
+        }
+
+        private void seasonComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e) {
+            seasonTextBlock.Text = (string)((ComboBoxItem)seasonComboBox.SelectedItem).Content;
+        }
+
+        private void redRadioButton_Checked(object sender, RoutedEventArgs e) {
+            colorTextBok.Text = "赤";
+        }
+
+        private void yerrowRadioButton_Checked(object sender, RoutedEventArgs e) {
+            colorTextBok.Text = "黄";
+        }
+
+        private void blueRadioButton_Checked(object sender, RoutedEventArgs e) {
+            colorTextBok.Text = "青";
         }
     }
 }
