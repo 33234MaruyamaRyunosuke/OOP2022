@@ -16,13 +16,22 @@ namespace CarReportSystem {
     public partial class Form1 : Form {
         //設定情報保存用オブジェクト
         Settings settings = Settings.getInstance();
-
-
         int mode = 0;
-        public Form1() {
-            InitializeComponent();
+            public Form1() {
+                InitializeComponent();
+            }
+
+        private void CarReportBindingNavigatorSaveItem_Click(object sender, EventArgs e) {
+            this.Validate();
+            this.carReportDBBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.infosys202222DataSet);
+
         }
 
+        private void btOpenReport_Click(object sender, EventArgs e) {
+            this.carReportDBTableAdapter.Fill(this.infosys202222DataSet.CarReportDB);
+        }
+       
         private void btExit_Click_1(object sender, EventArgs e) {
             Application.Exit();
         }
@@ -58,7 +67,7 @@ namespace CarReportSystem {
                 BackColor = Color.FromArgb(settings.MainFormColor);
             }
 
-            EnabledCheck(); //マスク処理呼び出し
+            
         }
 
         private void btAddReport_Click(object sender, EventArgs e) {
@@ -72,7 +81,7 @@ namespace CarReportSystem {
             DataRow newRow = infosys202222DataSet.CarReportDB.NewRow();
             newRow[1] = dtpDate.Text;
             newRow[2] = cbAuther.Text;
-            //newRow[3] = .Text;
+            newRow[3] = GetRadioButtonMaker();
             newRow[4] = cbCarName.Text;
             newRow[5] = tbReport.Text;
 
@@ -114,15 +123,13 @@ namespace CarReportSystem {
         }
 
         private void btDeleteReport_Click(object sender, EventArgs e) {
+           
             
-            EnabledCheck(); //マスク処理呼び出し
-
+            cbAuther.Text = null;
+            cbCarName = null;
         }
 
-        private void EnabledCheck() {
-            
-
-        }
+       
         //コンボボックスに記録者を登録する（重複なし）
         private void setCbAuther(string company) {
             if (!cbAuther.Items.Contains(company)) {
@@ -139,6 +146,7 @@ namespace CarReportSystem {
         }
 
         private void btPictureOpen_Click(object sender, EventArgs e) {
+            ofdCarReportOpen.Filter = "画像ファイル(*.jpg; *.png; *.bmp)| *.jpg; *.png; *.bmp;";
             if (ofdCarReportOpen.ShowDialog() == DialogResult.OK) {
                 pbPicture.Image = Image.FromFile(ofdCarReportOpen.FileName);
             }
@@ -148,11 +156,7 @@ namespace CarReportSystem {
             pbPicture.Image = null;
         }
 
-        private void btOpenReport_Click(object sender, EventArgs e) {
-            
-            this.carReportDBTableAdapter.Fill(this.infosys202222DataSet.AddressTable);
-
-        }
+        
 
         private void btSaveReport_Click(object sender, EventArgs e) {
             if (sfdCarReportSave.ShowDialog() == DialogResult.OK) {
@@ -170,9 +174,6 @@ namespace CarReportSystem {
         }
 
         private void Form1_Load_1(object sender, EventArgs e) {
-            
-            
-
         }
 
         private void carReportDBBindingNavigatorSaveItem_Click(object sender, EventArgs e) {
