@@ -21,7 +21,7 @@
         </Grid.RowDefinitions>
         <TextBlock Grid.Column="2" HorizontalAlignment="Center" Text="項目"/>
         <TextBlock Grid.Column="2" Text="設定値"/>
-        <Label Grid.Row="1" Content="ON/OFF(_O)" Target="{Binding ElementName=checkBox,Mode=OneMay}"/>
+        <Label Grid.Row="1" Content="ON/OFF(_O)" Target="{Binding ElementName=checkBox,Mode=OneWay}"/>
         <CheckBox x:Name="checkBox" Grid.Row="1" Grid.Column="1"
                   Content="チェックしたらON" VerticalAlignment="Center"
                   Checked="checkBok_Checked" Unchecked="checkBox_Unchecked"/>
@@ -39,12 +39,12 @@
         <TextBlock x:Name="colorTextBok" Grid.Row="2" Grid.Column="2"/>
         <Label  Grid.Row="3" Content="季節(_S)" Target="{Binding ElementName=seasonComboBox, Mode=OneWay}"/>
         <ComboBox Name="seasonComboBox" Grid.Row="3"
-            Grid.Column="1" SelectionChanged="seasonComboBox_SelectionChanged" SelectedIndex="0"/>
+            Grid.Column="1" SelectionChanged="seasonComboBox_SelectionChanged">
             <ComboBoxItem Content="春"/>
             <ComboBoxItem Content="夏"/>
             <ComboBoxItem Content="秋"/>
             <ComboBoxItem Content="冬"/>
             </ComboBox>
-        <TextBlock Name="seasonTextBlock" Grid.Row="3" Grid.Column="2"/>
+        <TextBlock x:Name="seasonTextBlock" Grid.Row="3" Grid.Column="2"/>
     </Grid>
 </Window>
