@@ -37,8 +37,13 @@ namespace CollarChecker {
         }
 
         private void Slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e) {
+            var r = byte.Parse(rValue.Text.ToString());
+            var g = byte.Parse(gValue.Text.ToString());
+            var b = byte.Parse(bValue.Text.ToString());
 
+            colorArea.Background = new SolidColorBrush(Color.FromRgb(r, g, b));
         }
+
 
     }
 
