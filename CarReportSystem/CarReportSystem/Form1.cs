@@ -23,7 +23,7 @@ namespace CarReportSystem {
         private void addressTableBindingNavigatorSaveItem_Click(object sender, EventArgs e) {
             this.Validate();
             this.infosys202222DataSetBindingSource.EndEdit();
-            this.carReportDBTableAdapter1.UpdateAll(this.infosys202222DataSet);
+            //this.carReportDBTableAdapter1.UpdateAll(this.infosys202222DataSet);
 
         }
 
