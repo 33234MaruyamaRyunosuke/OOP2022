@@ -26,8 +26,19 @@ namespace WeatherApp {
             var json = JsonConvert.DeserializeObject<Rootobject>(dString);
 
             tbWeatherInfo.Text = json.text;
+            tbPresenter.Text = json.publishingOffice;
             cbRegion.Text = json.targetArea;
 
+            /*var now = DateTimeOffset.Now;
+            tbWeatherInfo.Text = now.ToString();
+            tbWeatherInfo.Text += "\r\n";*/
+
+            
+
+            pbWeatherIcon.ImageLocation = "https://www.jma.go.jp/bosai/forecast/img/101.png";
+
         }
+
+        
     }
 }
