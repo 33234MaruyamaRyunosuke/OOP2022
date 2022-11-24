@@ -35,12 +35,14 @@ namespace WeatherApp {
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.pbJapanMap = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbWeatherIcon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbJapanMap)).BeginInit();
             this.SuspendLayout();
             // 
             // btWeatherGet
             // 
-            this.btWeatherGet.Location = new System.Drawing.Point(509, 142);
+            this.btWeatherGet.Location = new System.Drawing.Point(242, 80);
             this.btWeatherGet.Name = "btWeatherGet";
             this.btWeatherGet.Size = new System.Drawing.Size(111, 49);
             this.btWeatherGet.TabIndex = 0;
@@ -50,7 +52,7 @@ namespace WeatherApp {
             // 
             // tbWeatherInfo
             // 
-            this.tbWeatherInfo.Location = new System.Drawing.Point(93, 195);
+            this.tbWeatherInfo.Location = new System.Drawing.Point(93, 146);
             this.tbWeatherInfo.Multiline = true;
             this.tbWeatherInfo.Name = "tbWeatherInfo";
             this.tbWeatherInfo.Size = new System.Drawing.Size(289, 178);
@@ -59,7 +61,7 @@ namespace WeatherApp {
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(34, 195);
+            this.label1.Location = new System.Drawing.Point(34, 149);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(53, 12);
             this.label1.TabIndex = 2;
@@ -77,7 +79,7 @@ namespace WeatherApp {
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(46, 55);
+            this.label3.Location = new System.Drawing.Point(12, 9);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(41, 12);
             this.label3.TabIndex = 5;
@@ -85,7 +87,7 @@ namespace WeatherApp {
             // 
             // pbWeatherIcon
             // 
-            this.pbWeatherIcon.Location = new System.Drawing.Point(462, 23);
+            this.pbWeatherIcon.Location = new System.Drawing.Point(372, 42);
             this.pbWeatherIcon.Name = "pbWeatherIcon";
             this.pbWeatherIcon.Size = new System.Drawing.Size(100, 87);
             this.pbWeatherIcon.TabIndex = 6;
@@ -101,7 +103,7 @@ namespace WeatherApp {
             // 
             // tbPresenter
             // 
-            this.tbPresenter.Location = new System.Drawing.Point(93, 52);
+            this.tbPresenter.Location = new System.Drawing.Point(60, 6);
             this.tbPresenter.Name = "tbPresenter";
             this.tbPresenter.Size = new System.Drawing.Size(121, 19);
             this.tbPresenter.TabIndex = 8;
@@ -109,7 +111,7 @@ namespace WeatherApp {
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(419, 220);
+            this.label4.Location = new System.Drawing.Point(91, 358);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(63, 12);
             this.label4.TabIndex = 9;
@@ -118,7 +120,7 @@ namespace WeatherApp {
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(419, 285);
+            this.label5.Location = new System.Drawing.Point(253, 358);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(75, 12);
             this.label5.TabIndex = 10;
@@ -127,17 +129,26 @@ namespace WeatherApp {
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(419, 341);
+            this.label6.Location = new System.Drawing.Point(445, 358);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(53, 12);
             this.label6.TabIndex = 11;
             this.label6.Text = "週間予報";
+            // 
+            // pbJapanMap
+            // 
+            this.pbJapanMap.Location = new System.Drawing.Point(418, 149);
+            this.pbJapanMap.Name = "pbJapanMap";
+            this.pbJapanMap.Size = new System.Drawing.Size(209, 175);
+            this.pbJapanMap.TabIndex = 12;
+            this.pbJapanMap.TabStop = false;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(654, 404);
+            this.Controls.Add(this.pbJapanMap);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -152,6 +163,7 @@ namespace WeatherApp {
             this.Name = "Form1";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.pbWeatherIcon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbJapanMap)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -170,6 +182,7 @@ namespace WeatherApp {
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.PictureBox pbJapanMap;
     }
 }
 
