@@ -30,14 +30,18 @@ namespace WeatherApp {
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.pbWeatherIcon = new System.Windows.Forms.PictureBox();
-            this.cbRegion = new System.Windows.Forms.ComboBox();
             this.tbPresenter = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.pbJapanMap = new System.Windows.Forms.PictureBox();
+            this.cbRegion = new System.Windows.Forms.ComboBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbWeatherIcon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbJapanMap)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // btWeatherGet
@@ -55,7 +59,7 @@ namespace WeatherApp {
             this.tbWeatherInfo.Location = new System.Drawing.Point(93, 146);
             this.tbWeatherInfo.Multiline = true;
             this.tbWeatherInfo.Name = "tbWeatherInfo";
-            this.tbWeatherInfo.Size = new System.Drawing.Size(289, 178);
+            this.tbWeatherInfo.Size = new System.Drawing.Size(289, 371);
             this.tbWeatherInfo.TabIndex = 1;
             // 
             // label1
@@ -93,14 +97,6 @@ namespace WeatherApp {
             this.pbWeatherIcon.TabIndex = 6;
             this.pbWeatherIcon.TabStop = false;
             // 
-            // cbRegion
-            // 
-            this.cbRegion.FormattingEnabled = true;
-            this.cbRegion.Location = new System.Drawing.Point(93, 95);
-            this.cbRegion.Name = "cbRegion";
-            this.cbRegion.Size = new System.Drawing.Size(121, 20);
-            this.cbRegion.TabIndex = 7;
-            // 
             // tbPresenter
             // 
             this.tbPresenter.Location = new System.Drawing.Point(60, 6);
@@ -111,7 +107,7 @@ namespace WeatherApp {
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(91, 358);
+            this.label4.Location = new System.Drawing.Point(24, 534);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(63, 12);
             this.label4.TabIndex = 9;
@@ -120,7 +116,7 @@ namespace WeatherApp {
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(253, 358);
+            this.label5.Location = new System.Drawing.Point(214, 534);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(75, 12);
             this.label5.TabIndex = 10;
@@ -129,7 +125,7 @@ namespace WeatherApp {
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(445, 358);
+            this.label6.Location = new System.Drawing.Point(400, 581);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(53, 12);
             this.label6.TabIndex = 11;
@@ -137,23 +133,51 @@ namespace WeatherApp {
             // 
             // pbJapanMap
             // 
-            this.pbJapanMap.Location = new System.Drawing.Point(418, 149);
+            this.pbJapanMap.Location = new System.Drawing.Point(402, 146);
             this.pbJapanMap.Name = "pbJapanMap";
-            this.pbJapanMap.Size = new System.Drawing.Size(209, 175);
+            this.pbJapanMap.Size = new System.Drawing.Size(400, 400);
             this.pbJapanMap.TabIndex = 12;
             this.pbJapanMap.TabStop = false;
+            // 
+            // cbRegion
+            // 
+            this.cbRegion.FormattingEnabled = true;
+            this.cbRegion.Location = new System.Drawing.Point(102, 95);
+            this.cbRegion.Name = "cbRegion";
+            this.cbRegion.Size = new System.Drawing.Size(121, 20);
+            this.cbRegion.TabIndex = 13;
+            this.cbRegion.SelectedIndexChanged += new System.EventHandler(this.cbRegion_SelectedIndexChanged);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(26, 572);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 87);
+            this.pictureBox1.TabIndex = 14;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Location = new System.Drawing.Point(216, 572);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(100, 87);
+            this.pictureBox2.TabIndex = 15;
+            this.pictureBox2.TabStop = false;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(654, 404);
+            this.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.ClientSize = new System.Drawing.Size(828, 671);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.cbRegion);
             this.Controls.Add(this.pbJapanMap);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.tbPresenter);
-            this.Controls.Add(this.cbRegion);
             this.Controls.Add(this.pbWeatherIcon);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -161,9 +185,12 @@ namespace WeatherApp {
             this.Controls.Add(this.tbWeatherInfo);
             this.Controls.Add(this.btWeatherGet);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "天気アプリ";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbWeatherIcon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbJapanMap)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -177,12 +204,14 @@ namespace WeatherApp {
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pbWeatherIcon;
-        private System.Windows.Forms.ComboBox cbRegion;
         private System.Windows.Forms.TextBox tbPresenter;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.PictureBox pbJapanMap;
+        private System.Windows.Forms.ComboBox cbRegion;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
 
