@@ -38,6 +38,15 @@ namespace WeatherApp {
             this.cbRegion = new System.Windows.Forms.ComboBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.btHokkaido = new System.Windows.Forms.Button();
+            this.btTohoku = new System.Windows.Forms.Button();
+            this.btKantoKousinetu = new System.Windows.Forms.Button();
+            this.btHokuriku = new System.Windows.Forms.Button();
+            this.btTokai = new System.Windows.Forms.Button();
+            this.btKinki = new System.Windows.Forms.Button();
+            this.btTyugokuSikoku = new System.Windows.Forms.Button();
+            this.btKyusyu = new System.Windows.Forms.Button();
+            this.btOkinawa = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbWeatherIcon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbJapanMap)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -46,6 +55,7 @@ namespace WeatherApp {
             // 
             // btWeatherGet
             // 
+            this.btWeatherGet.Font = new System.Drawing.Font("ＭＳ 明朝", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.btWeatherGet.Location = new System.Drawing.Point(242, 80);
             this.btWeatherGet.Name = "btWeatherGet";
             this.btWeatherGet.Size = new System.Drawing.Size(111, 49);
@@ -65,9 +75,10 @@ namespace WeatherApp {
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(34, 149);
+            this.label1.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label1.Location = new System.Drawing.Point(12, 146);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(53, 12);
+            this.label1.Size = new System.Drawing.Size(76, 16);
             this.label1.TabIndex = 2;
             this.label1.Text = "天気概況";
             // 
@@ -83,9 +94,10 @@ namespace WeatherApp {
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("ＭＳ ゴシック", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label3.Location = new System.Drawing.Point(12, 9);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(41, 12);
+            this.label3.Size = new System.Drawing.Size(41, 11);
             this.label3.TabIndex = 5;
             this.label3.Text = "発表者";
             // 
@@ -99,7 +111,7 @@ namespace WeatherApp {
             // 
             // tbPresenter
             // 
-            this.tbPresenter.Location = new System.Drawing.Point(60, 6);
+            this.tbPresenter.Location = new System.Drawing.Point(59, 5);
             this.tbPresenter.Name = "tbPresenter";
             this.tbPresenter.Size = new System.Drawing.Size(121, 19);
             this.tbPresenter.TabIndex = 8;
@@ -133,7 +145,7 @@ namespace WeatherApp {
             // 
             // pbJapanMap
             // 
-            this.pbJapanMap.Location = new System.Drawing.Point(402, 146);
+            this.pbJapanMap.Location = new System.Drawing.Point(416, 146);
             this.pbJapanMap.Name = "pbJapanMap";
             this.pbJapanMap.Size = new System.Drawing.Size(400, 400);
             this.pbJapanMap.TabIndex = 12;
@@ -164,12 +176,120 @@ namespace WeatherApp {
             this.pictureBox2.TabIndex = 15;
             this.pictureBox2.TabStop = false;
             // 
+            // btHokkaido
+            // 
+            this.btHokkaido.Font = new System.Drawing.Font("ＭＳ ゴシック", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.btHokkaido.Location = new System.Drawing.Point(579, 181);
+            this.btHokkaido.Name = "btHokkaido";
+            this.btHokkaido.Size = new System.Drawing.Size(66, 33);
+            this.btHokkaido.TabIndex = 16;
+            this.btHokkaido.Text = "北海道";
+            this.btHokkaido.UseVisualStyleBackColor = true;
+            this.btHokkaido.Click += new System.EventHandler(this.btHokkaido_Click);
+            // 
+            // btTohoku
+            // 
+            this.btTohoku.Font = new System.Drawing.Font("ＭＳ ゴシック", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.btTohoku.Location = new System.Drawing.Point(714, 301);
+            this.btTohoku.Name = "btTohoku";
+            this.btTohoku.Size = new System.Drawing.Size(55, 33);
+            this.btTohoku.TabIndex = 17;
+            this.btTohoku.Text = "東北";
+            this.btTohoku.UseVisualStyleBackColor = true;
+            this.btTohoku.Click += new System.EventHandler(this.btTohoku_Click);
+            // 
+            // btKantoKousinetu
+            // 
+            this.btKantoKousinetu.Font = new System.Drawing.Font("ＭＳ ゴシック", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.btKantoKousinetu.Location = new System.Drawing.Point(694, 383);
+            this.btKantoKousinetu.Name = "btKantoKousinetu";
+            this.btKantoKousinetu.Size = new System.Drawing.Size(94, 33);
+            this.btKantoKousinetu.TabIndex = 18;
+            this.btKantoKousinetu.Text = "関東甲信越";
+            this.btKantoKousinetu.UseVisualStyleBackColor = true;
+            this.btKantoKousinetu.Click += new System.EventHandler(this.btKantoKousinetu_Click);
+            // 
+            // btHokuriku
+            // 
+            this.btHokuriku.Font = new System.Drawing.Font("ＭＳ ゴシック", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.btHokuriku.Location = new System.Drawing.Point(548, 318);
+            this.btHokuriku.Name = "btHokuriku";
+            this.btHokuriku.Size = new System.Drawing.Size(66, 33);
+            this.btHokuriku.TabIndex = 19;
+            this.btHokuriku.Text = "北陸";
+            this.btHokuriku.UseVisualStyleBackColor = true;
+            this.btHokuriku.Click += new System.EventHandler(this.btHokuriku_Click);
+            // 
+            // btTokai
+            // 
+            this.btTokai.Font = new System.Drawing.Font("ＭＳ ゴシック", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.btTokai.Location = new System.Drawing.Point(620, 440);
+            this.btTokai.Name = "btTokai";
+            this.btTokai.Size = new System.Drawing.Size(66, 33);
+            this.btTokai.TabIndex = 20;
+            this.btTokai.Text = "東海";
+            this.btTokai.UseVisualStyleBackColor = true;
+            this.btTokai.Click += new System.EventHandler(this.btTokai_Click);
+            // 
+            // btKinki
+            // 
+            this.btKinki.Font = new System.Drawing.Font("ＭＳ ゴシック", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.btKinki.Location = new System.Drawing.Point(548, 471);
+            this.btKinki.Name = "btKinki";
+            this.btKinki.Size = new System.Drawing.Size(66, 33);
+            this.btKinki.TabIndex = 21;
+            this.btKinki.Text = "近畿";
+            this.btKinki.UseVisualStyleBackColor = true;
+            this.btKinki.Click += new System.EventHandler(this.btKinki_Click);
+            // 
+            // btTyugokuSikoku
+            // 
+            this.btTyugokuSikoku.Font = new System.Drawing.Font("ＭＳ ゴシック", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.btTyugokuSikoku.Location = new System.Drawing.Point(451, 370);
+            this.btTyugokuSikoku.Name = "btTyugokuSikoku";
+            this.btTyugokuSikoku.Size = new System.Drawing.Size(91, 33);
+            this.btTyugokuSikoku.TabIndex = 22;
+            this.btTyugokuSikoku.Text = "中国・四国";
+            this.btTyugokuSikoku.UseVisualStyleBackColor = true;
+            this.btTyugokuSikoku.Click += new System.EventHandler(this.btTyugokuSikoku_Click);
+            // 
+            // btKyusyu
+            // 
+            this.btKyusyu.Font = new System.Drawing.Font("ＭＳ ゴシック", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.btKyusyu.Location = new System.Drawing.Point(485, 510);
+            this.btKyusyu.Name = "btKyusyu";
+            this.btKyusyu.Size = new System.Drawing.Size(66, 33);
+            this.btKyusyu.TabIndex = 23;
+            this.btKyusyu.Text = "九州";
+            this.btKyusyu.UseVisualStyleBackColor = true;
+            this.btKyusyu.Click += new System.EventHandler(this.btKyusyu_Click);
+            // 
+            // btOkinawa
+            // 
+            this.btOkinawa.Font = new System.Drawing.Font("ＭＳ ゴシック", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.btOkinawa.Location = new System.Drawing.Point(732, 455);
+            this.btOkinawa.Name = "btOkinawa";
+            this.btOkinawa.Size = new System.Drawing.Size(66, 33);
+            this.btOkinawa.TabIndex = 24;
+            this.btOkinawa.Text = "沖縄";
+            this.btOkinawa.UseVisualStyleBackColor = true;
+            this.btOkinawa.Click += new System.EventHandler(this.btOkinawa_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.ClientSize = new System.Drawing.Size(828, 671);
+            this.Controls.Add(this.btOkinawa);
+            this.Controls.Add(this.btKyusyu);
+            this.Controls.Add(this.btTyugokuSikoku);
+            this.Controls.Add(this.btKinki);
+            this.Controls.Add(this.btTokai);
+            this.Controls.Add(this.btHokuriku);
+            this.Controls.Add(this.btKantoKousinetu);
+            this.Controls.Add(this.btTohoku);
+            this.Controls.Add(this.btHokkaido);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.cbRegion);
@@ -212,6 +332,15 @@ namespace WeatherApp {
         private System.Windows.Forms.ComboBox cbRegion;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Button btHokkaido;
+        private System.Windows.Forms.Button btTohoku;
+        private System.Windows.Forms.Button btKantoKousinetu;
+        private System.Windows.Forms.Button btHokuriku;
+        private System.Windows.Forms.Button btTokai;
+        private System.Windows.Forms.Button btKinki;
+        private System.Windows.Forms.Button btTyugokuSikoku;
+        private System.Windows.Forms.Button btKyusyu;
+        private System.Windows.Forms.Button btOkinawa;
     }
 }
 
