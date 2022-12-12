@@ -280,6 +280,7 @@ namespace WeatherApp {
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.BackgroundImage = global::WeatherApp.Properties.Resources.bg_natural_sky;
             this.ClientSize = new System.Drawing.Size(828, 671);
             this.Controls.Add(this.btOkinawa);
             this.Controls.Add(this.btKyusyu);
@@ -304,6 +305,7 @@ namespace WeatherApp {
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tbWeatherInfo);
             this.Controls.Add(this.btWeatherGet);
+            this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Name = "Form1";
             this.Text = "天気アプリ";
             this.Load += new System.EventHandler(this.Form1_Load);
